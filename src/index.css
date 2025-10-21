@@ -1,34 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  box-sizing: border-box !important;
+  scroll-behavior: smooth;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", system-ui, sans-serif;
+}
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -2;
   min-height: 100vh;
+  width: 100%;
+  #root {
+    background-color: #09090b;
+    background-image: radial-gradient(
+      ellipse 80% 80% at 50% -20%,
+      rgba(120, 119, 198, 0.3),
+      rgba(255, 255, 255, 0)
+    );
+  }
 }
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  body {
+    #root {
+      color: #09090b;
+      background-color: #f9fafb;
+      background-image: radial-gradient(
+        ellipse 80% 80% at 50% -20%,
+        rgba(217, 216, 255, 0.5),
+        rgba(255, 255, 255, 0.9)
+      );
+    }
   }
 }
