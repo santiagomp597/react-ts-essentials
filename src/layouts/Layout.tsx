@@ -9,13 +9,17 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const footerProps = {
+    sourceCodeUrl: "https://github.com/santiagomp597/react-ts-essentials",
+    footerText: "View source code on GitHub"
+  };
   return (
     <div className="layout">
       <Header />
       <main className="layout-main">
         {children}
       </main>
-      <Footer />
+      <Footer {...footerProps} />
     </div>
   );
 };

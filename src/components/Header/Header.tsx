@@ -121,6 +121,7 @@ const Header: React.FC = () => {
       <div className="mobile-nav-container">
         {/* Hamburger Menu Button */}
         <button
+          data-testid="mobile-menu-button"
           className="hamburger-button"
           aria-label="Toggle mobile menu"
           onClick={openMobileMenu}
