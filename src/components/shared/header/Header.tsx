@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
 import './Header.css';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     {
-      slug: "react-dom",
-      title: "React DOM",
+      slug: "typescript",
+      title: "TypeScript",
+      path: "/typescript",
     },
     {
-      slug: "native-hooks",
-      title: "Native Hooks",
-    },
-    {
-      slug: "custom-hooks",
-      title: "Custom Hooks",
-    },
-    {
-      slug: "game-time",
-      title: "Game Time",
+      slug: "react",
+      title: "React",
+      path: "/react",
     },
   ];
 
@@ -50,69 +46,20 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Section highlighting functionality
-    const sections = document.querySelectorAll("section");
-    const desktopNavItems = document.querySelectorAll("header nav div a");
-    const mobileNavItems = document.querySelectorAll(".mobile-nav-link");
-
-    const callback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          [...desktopNavItems, ...mobileNavItems].forEach((item) => {
-            const element = item as HTMLElement;
-            if (element.getAttribute("aria-label") === entry.target.id) {
-              element.classList.add("active");
-            } else {
-              element.classList.remove("active");
-            }
-          });
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, []);
-
   return (
     <header className="header">
       {/* Desktop Navigation */}
       <nav className="desktop-nav">
         <div className="nav-container">
           {navItems.map((link) => (
-            <a
+            <Link
               key={link.slug}
-              className="nav-link"
+              className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
               aria-label={link.title}
-              href={`#${link.slug}`}
+              to={link.path}
             >
               {link.title}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
@@ -171,15 +118,15 @@ const Header: React.FC = () => {
         {/* Menu Items */}
         <nav className="mobile-nav">
           {navItems.map((link) => (
-            <a
+            <Link
               key={link.slug}
-              className="mobile-nav-link"
+              className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
               aria-label={link.title}
-              href={`#${link.slug}`}
+              to={link.path}
               onClick={handleNavLinkClick}
             >
               {link.title}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

@@ -1,0 +1,247 @@
+.ts-basics-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #e2e8f0;
+}
+
+.ts-basics-container {
+  background: rgba(15, 20, 25, 0.6);
+  border: 1px solid rgba(49, 120, 198, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.ts-basics-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ts-basics-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3178c6, #61dafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.ts-basics-header p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ts-basics-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(51, 65, 85, 0.3);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background: rgba(51, 65, 85, 0.5);
+  border-color: rgba(49, 120, 198, 0.4);
+  color: #e2e8f0;
+}
+
+.tab-button.active {
+  background: rgba(49, 120, 198, 0.2);
+  border-color: #3178c6;
+  color: #3178c6;
+  font-weight: 600;
+}
+
+.ts-basics-content {
+  min-height: 500px;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-content h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3178c6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tab-content > p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.example-card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.example-card:hover {
+  border-color: rgba(49, 120, 198, 0.4);
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.example-card.large {
+  grid-column: 1 / -1;
+}
+
+.example-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3178c6;
+  margin-bottom: 1rem;
+}
+
+.result {
+  background: rgba(6, 78, 59, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.result strong {
+  color: #22c55e;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result pre {
+  color: #dcfce7;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+}
+
+.result p {
+  color: #dcfce7;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.example-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.oop-concepts {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.oop-concepts h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3178c6;
+  margin-bottom: 1rem;
+}
+
+.oop-concepts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.oop-concepts li {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.oop-concepts li::before {
+  content: "→";
+  color: #3178c6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.oop-concepts li strong {
+  color: #3178c6;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ts-basics-section {
+    padding: 1rem;
+  }
+
+  .ts-basics-container {
+    padding: 1rem;
+  }
+
+  .ts-basics-header h2 {
+    font-size: 2rem;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ts-basics-tabs {
+    gap: 0.5rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,22 +1,21 @@
-
 import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import Header from '../components/shared/header/Header';
+import Footer from '../components/shared/footer/Footer';
 import './Layout.css';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const LayoutReact: React.FC<LayoutProps> = ({ children }) => {
   const footerProps = {
     sourceCodeUrl: "https://github.com/santiagomp597/react-ts-essentials",
     footerText: "View source code on GitHub"
   };
   return (
-    <div className="layout">
+    <div className="layout layout-react">
       <Header />
-      <main className="layout-main">
+      <main className="layout-react-main">
         {children}
       </main>
       <Footer {...footerProps} />
@@ -24,4 +23,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default LayoutReact;
