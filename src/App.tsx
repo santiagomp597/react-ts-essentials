@@ -3,11 +3,21 @@ import LayoutTypeScript from './layouts/LayoutTypeScript'
 import LayoutReact from './layouts/LayoutReact'
 import TypeScriptPage from './pages/TypeScriptPage'
 import ReactPage from './pages/ReactPage'
+// import LayoutJavaScript from './layouts/LayoutJavaScript'
+// import JavaScriptPage from './pages/JavaScriptPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/typescript" replace />} />
+      {/* <Route
+        path="/javascript"
+        element={
+          <LayoutJavaScript>
+            <JavaScriptPage />
+          </LayoutJavaScript>
+        }
+      /> */}
       <Route
         path="/typescript"
         element={

@@ -1,6 +1,5 @@
 import TsBasicsSection from '../components/ts-basics-section/TsBasicsSection';
-
-function TypeScriptPage() {
+function JavaScriptPage() {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
@@ -10,4 +9,4 @@ function TypeScriptPage() {
   );
 }
 
-export default TypeScriptPage;
+export default JavaScriptPage;

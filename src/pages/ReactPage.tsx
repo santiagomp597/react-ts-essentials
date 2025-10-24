@@ -1,14 +1,11 @@
-import HooksSection from '../components/hooks-section/HooksSection';
+import ReactBasicsSection from '../components/react-basics-section/ReactBasicsSection';
 
 function ReactPage() {
   return (
     <>
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h1>React Essentials</h1>
-        <p>Welcome to the React essentials section!</p>
-        <p>Explore the core concepts and features of React.</p>
+      <div style={{ textAlign: 'center' }}>
+        <ReactBasicsSection />
       </div>
-      <HooksSection />
     </>
   );
 }

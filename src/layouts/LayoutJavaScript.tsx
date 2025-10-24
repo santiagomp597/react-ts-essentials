@@ -7,13 +7,13 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const LayoutTypeScript: React.FC<LayoutProps> = ({ children }) => {
+const LayoutJavaScript: React.FC<LayoutProps> = ({ children }) => {
   const footerProps = {
     sourceCodeUrl: "https://github.com/santiagomp597/react-ts-essentials",
     footerText: "View source code on GitHub"
   };
   return (
-    <div className="layout layout-typescript">
+    <div className="layout layout-javascript">
       <Header />
       <main className="layout-main">
         {children}
@@ -23,4 +23,4 @@ const LayoutTypeScript: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default LayoutTypeScript;
+export default LayoutJavaScript;

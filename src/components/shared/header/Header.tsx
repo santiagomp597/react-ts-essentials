@@ -7,6 +7,11 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
+    // {
+    //   slug: "javascript",
+    //   title: "JavaScript",
+    //   path: "/javascript",
+    // },
     {
       slug: "typescript",
       title: "TypeScript",
@@ -53,6 +58,7 @@ const Header: React.FC = () => {
         <div className="nav-container">
           {navItems.map((link) => (
             <Link
+              viewTransition
               key={link.slug}
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
               aria-label={link.title}

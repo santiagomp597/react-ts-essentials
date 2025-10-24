@@ -19,6 +19,38 @@
   color: #e2e8f0;
   font-size: 0.9rem;
   line-height: 1.6;
+  margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.result-block {
+  background: rgba(6, 78, 59, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.result-block pre {
+  color: #dcfce7;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+}
+
+.result-block p {
+  color: #dcfce7;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Title styles */
+.code-block-title {
+  color: #22c55e;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
 }

@@ -1,78 +1,4 @@
-.ts-basics-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  color: #e2e8f0;
-}
-
-.ts-basics-container {
-  background: rgba(15, 20, 25, 0.6);
-  border: 1px solid rgba(49, 120, 198, 0.2);
-  border-radius: 12px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-}
-
-.ts-basics-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.ts-basics-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3178c6, #61dafb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-}
-
-.ts-basics-header p {
-  font-size: 1.1rem;
-  color: #94a3b8;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.ts-basics-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.tab-button {
-  padding: 0.75rem 1.5rem;
-  background: rgba(51, 65, 85, 0.3);
-  border: 1px solid rgba(100, 116, 139, 0.3);
-  border-radius: 8px;
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tab-button:hover {
-  background: rgba(51, 65, 85, 0.5);
-  border-color: rgba(49, 120, 198, 0.4);
-  color: #e2e8f0;
-}
-
-.tab-button.active {
-  background: rgba(49, 120, 198, 0.2);
-  border-color: #3178c6;
-  color: #3178c6;
-  font-weight: 600;
-}
-
-.ts-basics-content {
-  min-height: 500px;
-}
-
+/* Tab content container */
 .tab-content {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -106,6 +32,7 @@
   margin-right: auto;
 }
 
+/* Examples grid for primitive types */
 .examples-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,6 +40,7 @@
   margin-top: 2rem;
 }
 
+/* Example cards */
 .example-card {
   background: rgba(30, 41, 59, 0.4);
   border: 1px solid rgba(71, 85, 105, 0.3);
@@ -144,7 +72,8 @@
   margin: 0;
 }
 
-.oop-concepts {
+/* OOP concepts section */
+.concepts {
   background: rgba(30, 41, 59, 0.4);
   border: 1px solid rgba(71, 85, 105, 0.3);
   border-radius: 10px;
@@ -152,20 +81,20 @@
   margin-top: 2rem;
 }
 
-.oop-concepts h4 {
+.concepts h4 {
   font-size: 1.3rem;
   font-weight: 600;
   color: #3178c6;
   margin-bottom: 1rem;
 }
 
-.oop-concepts ul {
+.concepts ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.oop-concepts li {
+.concepts li {
   color: #cbd5e1;
   font-size: 1rem;
   line-height: 1.6;
@@ -174,7 +103,7 @@
   position: relative;
 }
 
-.oop-concepts li::before {
+.concepts li::before {
   content: "→";
   color: #3178c6;
   font-weight: bold;
@@ -182,36 +111,15 @@
   left: 0;
 }
 
-.oop-concepts li strong {
+.concepts li strong {
   color: #3178c6;
   font-weight: 600;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .ts-basics-section {
-    padding: 0.5rem;
-  }
-
-  .ts-basics-container {
-    padding: 1rem;
-  }
-
-  .ts-basics-header h2 {
-    font-size: 2rem;
-  }
-
   .examples-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .ts-basics-tabs {
-    gap: 0.5rem;
-  }
-
-  .tab-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
   }
 }
