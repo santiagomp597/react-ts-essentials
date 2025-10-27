@@ -1,7 +1,8 @@
 // Shared types for tabs data structure
 export interface CodeExample {
   title: string;
-  code: string;
+  code?: string;
+  content?: React.ReactNode;
   description: string;
   sizeClass: "regular" | "large";
   result?: {

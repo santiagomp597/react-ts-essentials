@@ -1,0 +1,58 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.align-right {
+  margin-left: auto;
+}
+.code-block {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+  overflow-x: auto;
+  text-align: left;
+}
+
+.code-block code {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.button {
+  background-color: #2f71b9;
+  color: #cbd5e1;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.input-wrapper {
+  text-align: left;
+}
+.label {
+  display: inline-block;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.6);
+  color: #cbd5e1;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  &:focus {
+    border-color: #3b82f6;
+    outline: none;
+  }
+}

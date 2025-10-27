@@ -1,4 +1,7 @@
-import { TabData } from "../../types/tab-data";
+import { TabData } from "../../utils/interfaces";
+import NumberExample from "./examples/NumberExample";
+import StringExample from "./examples/StringExample";
+import BooleanExample from "./examples/BooleanExample";
 
 // Tab data for TypeScript Basics Section
 export const tsBasicsTabs: TabData[] = [
@@ -11,21 +14,28 @@ export const tsBasicsTabs: TabData[] = [
     examples: [
       {
         title: "String",
-        code: 'const message: string = "Hello TypeScript!";',
+        content: <StringExample></StringExample>,
         description:
           "Used for text data. Can be enclosed in single quotes, double quotes, or backticks for template literals.",
         sizeClass: "regular",
       },
       {
         title: "Number",
-        code: "const count: number = 42;",
+        content: <NumberExample></NumberExample>,
         description:
           "All numeric values in TypeScript are floating point numbers, including integers and decimals.",
         sizeClass: "regular",
       },
       {
+        title: "Object",
+        code: 'const obj: object = { key: "value" };',
+        description:
+          "Non-primitive type representing anything that isn't a primitive value.",
+        sizeClass: "regular",
+      },
+      {
         title: "Boolean",
-        code: "const isValid: boolean = true;",
+        content: <BooleanExample></BooleanExample>,
         description:
           "Simple true/false values for logical operations and conditions.",
         sizeClass: "regular",
@@ -35,13 +45,6 @@ export const tsBasicsTabs: TabData[] = [
         code: "const numbers: number[] = [1, 2, 3, 4, 5];",
         description:
           "Collections of elements. Can also be written as Array<number>.",
-        sizeClass: "regular",
-      },
-      {
-        title: "Object",
-        code: 'const obj: object = { key: "value" };',
-        description:
-          "Non-primitive type representing anything that isn't a primitive value.",
         sizeClass: "regular",
       },
       {
@@ -56,7 +59,7 @@ export const tsBasicsTabs: TabData[] = [
         code: "const empty: null = null;\nconst notSet: undefined = undefined;",
         description:
           "Represent absence of value. Null is intentionally empty, undefined means not yet assigned.",
-        sizeClass: "regular",
+        sizeClass: "large",
       },
     ],
   },

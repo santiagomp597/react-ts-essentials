@@ -1,37 +1,58 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import App from './App';
 
 describe('App Component', () => {
   test('renders without crashing', () => {
     // This is the most basic and important test - ensures the app can render
-    render(<App />);
+    render(
+      <MemoryRouter initialEntries={['/typescript']}>
+        <App />
+      </MemoryRouter>
+    );
 
     // Verify the main container exists
     expect(document.body).toBeInTheDocument();
   });
 
-  test('renders main heading', () => {
-    render(<App />);
+  test('renders TypeScript page by default', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
 
-    // Test for the specific main heading - verifies core content is displayed
-    const heading = screen.getByText('Essentials of React + TypeScript');
+    // Test for the TypeScript essentials heading since that's the default route
+    const heading = screen.getByText('TypeScript Essentials');
     expect(heading).toBeInTheDocument();
-    expect(heading.tagName).toBe('H1');
+    expect(heading.tagName).toBe('H2');
   });
 
-  test('renders welcome message', () => {
-    render(<App />);
+  test('renders React page when navigated to react route', () => {
+    render(
+      <MemoryRouter initialEntries={['/react']}>
+        <App />
+      </MemoryRouter>
+    );
 
-    // Test for welcome text - ensures the app displays expected content
-    const welcomeText = screen.getByText('Welcome to the React + TypeScript essentials project!');
-    expect(welcomeText).toBeInTheDocument();
+    // Test for React essentials heading
+    const heading = screen.getByText('React Essentials');
+    expect(heading).toBeInTheDocument();
+    expect(heading.tagName).toBe('H2');
   });
 
-  test('contains HooksSection component', () => {
-    render(<App />);
+  test('contains navigation header', () => {
+    render(
+      <MemoryRouter initialEntries={['/typescript']}>
+        <App />
+      </MemoryRouter>
+    );
 
-    // This ensures child components are properly rendered
-    // Even if HooksSection has no testable content yet, it should not crash
-    expect(document.body).toBeInTheDocument();
+    // Test that navigation links are present (there are multiple due to mobile/desktop versions)
+    const typescriptLinks = screen.getAllByText('TypeScript');
+    const reactLinks = screen.getAllByText('React');
+
+    expect(typescriptLinks.length).toBeGreaterThan(0);
+    expect(reactLinks.length).toBeGreaterThan(0);
   });
 });

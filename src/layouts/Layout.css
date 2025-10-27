@@ -9,43 +9,28 @@
 .layout-javascript {
   background-color: #0d1117;
   background-image: radial-gradient(
-      ellipse 80% 80% at 50% -20%,
-      rgba(255, 223, 93, 0.2),
-      rgba(255, 255, 255, 0)
-    ),
-    radial-gradient(
-      ellipse 60% 60% at 80% 70%,
-      rgba(255, 159, 67, 0.15),
-      rgba(255, 255, 255, 0)
-    );
+    ellipse 80% 80% at 50% -20%,
+    rgba(255, 223, 93, 0.2),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .layout-react {
-  background-color: #19353c;
+  background-color: #000000;
   background-image: radial-gradient(
-      ellipse 80% 80% at 50% -20%,
-      rgba(97, 218, 251, 0.15),
-      rgba(255, 255, 255, 0)
-    ),
-    radial-gradient(
-      ellipse 60% 60% at 20% 70%,
-      rgba(58, 123, 213, 0.1),
-      rgba(255, 255, 255, 0)
-    );
+    ellipse 80% 80% at 50% -20%,
+    rgba(0, 200, 255, 0.707),
+    rgb(7, 55, 65)
+  );
 }
 
 .layout-typescript {
   background-color: #0f1419;
   background-image: radial-gradient(
-      ellipse 80% 80% at 50% -20%,
-      rgba(49, 120, 198, 0.2),
-      rgba(255, 255, 255, 0)
-    ),
-    radial-gradient(
-      ellipse 60% 60% at 80% 70%,
-      rgba(35, 90, 151, 0.15),
-      rgba(255, 255, 255, 0)
-    );
+    ellipse 80% 80% at 50% -20%,
+    rgba(49, 120, 198, 0.2),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .layout-main {

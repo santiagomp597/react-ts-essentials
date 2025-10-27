@@ -18,13 +18,14 @@
 .desktop-nav {
   display: none;
   border-radius: 0.75rem;
+  border: transparent 1px solid;
   margin: 0 auto;
   width: 100%;
   max-width: 72rem;
-  animation: nav-shadow 1s linear both;
+  animation: nav-shadow 2s linear both;
   animation-timeline: scroll();
-  animation-range: 0 100px;
-  background-color: rgba(39, 39, 42, 0.9);
+  animation-range: 0 250px;
+  background-color: rgba(15, 20, 25, 0.6);
   backdrop-filter: blur(12px);
 }
 
@@ -75,19 +76,12 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #3b82f6;
+  color: #61dafb;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
-}
-
-@media (prefers-color-scheme: dark) {
-  .nav-link:hover,
-  .nav-link.active {
-    color: #3178c6;
-  }
 }
 
 /* Mobile Navigation Container */

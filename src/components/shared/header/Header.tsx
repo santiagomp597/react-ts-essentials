@@ -13,14 +13,14 @@ const Header: React.FC = () => {
     //   path: "/javascript",
     // },
     {
-      slug: "typescript",
-      title: "TypeScript",
-      path: "/typescript",
-    },
-    {
       slug: "react",
       title: "React",
       path: "/react",
+    },
+    {
+      slug: "typescript",
+      title: "TypeScript",
+      path: "/typescript",
     },
   ];
 

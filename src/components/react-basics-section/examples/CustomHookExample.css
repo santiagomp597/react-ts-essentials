@@ -1,0 +1,95 @@
+/* Keyframe animation for loading spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Status display container */
+.status-display {
+  text-align: center;
+  padding: 2rem;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status icon containers */
+.status-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #3b82f6;
+  font-size: 18px;
+}
+
+.status-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #10b981;
+  font-size: 18px;
+}
+
+.status-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ef4444;
+  font-size: 18px;
+}
+
+.status-neutral {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3b82f6;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Status icons */
+.status-icon {
+  font-size: 24px;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Button variants */
+.button-loading {
+  background-color: #2f71b9;
+  cursor: pointer;
+}
+
+.button-loading:disabled {
+  background-color: #64748b;
+  cursor: not-allowed;
+}
+
+.button-success {
+  background-color: #10b981;
+}
+
+.button-error {
+  background-color: #ef4444;
+}
+
+.button-neutral {
+  background-color: #64748b;
+}

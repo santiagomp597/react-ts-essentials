@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeBlock from '../code-block/CodeBlock';
-import { TabData } from '../../../types/tab-data';
+import { TabData } from '../../../utils/interfaces';
 import './TabContent.css';
 
 interface TabContentProps {
@@ -20,14 +20,18 @@ const TabContent: React.FC<TabContentProps> = ({ tabData }) => {
             className={`example-card ${example.sizeClass}`}
           >
             <h4>{example.title}</h4>
-            <CodeBlock>
-              {example.code.includes('\n') ? (
-                <pre>{example.code}</pre>
-              ) : (
-                <code>{example.code}</code>
-              )}
-            </CodeBlock>
-
+            {example.content && (
+              <>{example.content}</>
+            )}
+            {example.code && (
+              <CodeBlock>
+                {example.code.includes('\n') ? (
+                  <pre>{example.code}</pre>
+                ) : (
+                  <code>{example.code}</code>
+                )}
+              </CodeBlock>
+            )}
             {example.result && (
               <CodeBlock type="result" title={example.result.title}>
                 {example.result.type === 'json' ? (
@@ -39,7 +43,6 @@ const TabContent: React.FC<TabContentProps> = ({ tabData }) => {
                 )}
               </CodeBlock>
             )}
-
             <p style={{ marginTop: '1rem', textAlign: 'left' }}>{example.description}</p>
           </div>
         ))}

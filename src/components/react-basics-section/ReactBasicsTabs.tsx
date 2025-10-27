@@ -1,4 +1,8 @@
-import { TabData } from "../../types/tab-data";
+import { TabData } from "../../utils/interfaces";
+import { ConditionalRenderingExample } from "./examples/ConditionalRenderingExample";
+import { CustomHookExample } from "./examples/CustomHookExample";
+import { ListsAndKeysExample } from "./examples/ListsAndKeysExample";
+import { UseEffectExample } from "./examples/UseEffectExample";
 
 // Tab data for React Basics Section
 export const reactBasicsTabs: TabData[] = [
@@ -21,34 +25,14 @@ const greeting = <h1>Hello, {user.firstName}!</h1>;`,
       },
       {
         title: "Conditional Rendering",
-        code: `function Welcome({ isLoggedIn, username }) {
-  return (
-    <div>
-      {isLoggedIn ? (
-        <h1>Welcome back, {username}!</h1>
-      ) : (
-        <h1>Please sign in.</h1>
-      )}
-    </div>
-  );
-}`,
+        content: <ConditionalRenderingExample />,
         description:
           "Use JavaScript operators like ternary operator to conditionally render different content.",
         sizeClass: "large",
       },
       {
         title: "Lists and Keys",
-        code: `const items = ['Apple', 'Banana', 'Orange'];
-
-function ItemList() {
-  return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  );
-}`,
+        content: <ListsAndKeysExample />,
         description:
           "Render lists using map() and provide unique keys for each item to help React track changes.",
         sizeClass: "large",
@@ -272,133 +256,100 @@ function MainApp() {
       "Hooks let you use state and other React features in functional components. Learn about built-in hooks and creating custom ones.",
     examples: [
       {
-        title: "useState Hook",
-        code: `import React, { useState } from 'react';
-
-function Counter() {
-  const [count, setCount] = useState(0);
-  
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        Increment
-      </button>
-      <button onClick={() => setCount(count - 1)}>
-        Decrement
-      </button>
-    </div>
-  );
-}`,
-        description:
-          "useState hook allows you to add state to functional components. Returns current state and setter function.",
-        sizeClass: "large",
-      },
-      {
         title: "useEffect Hook",
-        code: `import React, { useState, useEffect } from 'react';
-
-function UserProfile({ userId }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    async function fetchUser() {
-      setLoading(true);
-      const response = await fetch(\`/api/users/\${userId}\`);
-      const userData = await response.json();
-      setUser(userData);
-      setLoading(false);
-    }
-    
-    fetchUser();
-  }, [userId]); // Re-run when userId changes
-  
-  if (loading) return <div>Loading...</div>;
-  return <div>Hello, {user?.name}!</div>;
-}`,
+        content: <UseEffectExample />,
         description:
           "useEffect hook lets you perform side effects. Use dependency array to control when it runs.",
         sizeClass: "large",
       },
       {
-        title: "Custom Hook",
-        code: `// Custom hook for fetching data
-function useApi(url) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+        title: "useRef Hook",
+        code: `import React, { useRef, useEffect } from 'react';
+
+function TextInput() {
+  const inputRef = useRef(null);
+  const countRef = useRef(0);
+  
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+  
+  const handleClick = () => {
+    countRef.current += 1;
+    console.log('Clicked', countRef.current, 'times');
+  };
   
   useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-        const result = await response.json();
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    
-    fetchData();
-  }, [url]);
-  
-  return { data, loading, error };
-}
-
-// Usage
-function UserList() {
-  const { data: users, loading, error } = useApi('/api/users');
-  
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+    // Focus input on mount
+    inputRef.current.focus();
+  }, []);
   
   return (
-    <ul>
-      {users.map(user => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-    </ul>
+    <div>
+      <input 
+        ref={inputRef}
+        type="text" 
+        placeholder="Type something..." 
+      />
+      <button onClick={focusInput}>Focus Input</button>
+      <button onClick={handleClick}>
+        Click me (check console)
+      </button>
+    </div>
   );
 }`,
+        description:
+          "useRef hook creates a mutable ref object that persists across renders. Use it to access DOM elements or store mutable values.",
+        sizeClass: "large",
+      },
+      {
+        title: "Custom Hook",
+        content: <CustomHookExample />,
         description:
           "Custom hooks let you extract component logic into reusable functions that can use other hooks.",
         sizeClass: "large",
       },
       {
-        title: "useReducer Hook",
-        code: `import React, { useReducer } from 'react';
+        title: "useCallback Hook",
+        code: `import React, { useState, useCallback, memo } from 'react';
 
-function counterReducer(state, action) {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 };
-    case 'decrement':
-      return { count: state.count - 1 };
-    case 'reset':
-      return { count: 0 };
-    default:
-      throw new Error(\`Unknown action: \${action.type}\`);
-  }
-}
+// Child component that only re-renders when props change
+const ExpensiveChild = memo(({ onButtonClick, count }) => {
+  console.log('ExpensiveChild rendered');
+  return (
+    <div>
+      <p>Count from parent: {count}</p>
+      <button onClick={onButtonClick}>
+        Increment from child
+      </button>
+    </div>
+  );
+});
 
-function Counter() {
-  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+function Parent() {
+  const [count, setCount] = useState(0);
+  const [otherState, setOtherState] = useState(0);
+  
+  // Memoized callback - only recreated when count changes
+  const handleIncrement = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
   
   return (
     <div>
-      <p>Count: {state.count}</p>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+      <h3>Parent Component</h3>
+      <button onClick={() => setOtherState(prev => prev + 1)}>
+        Change other state: {otherState}
+      </button>
+      <ExpensiveChild 
+        onButtonClick={handleIncrement} 
+        count={count} 
+      />
     </div>
   );
 }`,
         description:
-          "useReducer is useful for complex state logic. It takes a reducer function and initial state.",
+          "useCallback memoizes callback functions to prevent unnecessary re-renders of child components. Use it when passing callbacks to optimized child components.",
         sizeClass: "large",
       },
     ],

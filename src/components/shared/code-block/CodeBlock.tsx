@@ -1,5 +1,6 @@
 import React from 'react';
 import './CodeBlock.css';
+import '../../../styles/shared.css';
 
 interface CodeBlockProps {
   children: React.ReactNode;

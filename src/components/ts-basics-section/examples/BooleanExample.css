@@ -1,0 +1,39 @@
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  margin-left: auto;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #475569;
+  border-radius: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider.active {
+  background-color: #2f71b9;
+}
+
+.toggle-circle {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+.toggle-circle.active {
+  left: 27px;
+}
