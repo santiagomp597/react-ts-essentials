@@ -1,3 +1,5 @@
+@import "../../../styles/Variables.css";
+
 /* Keyframe animation for loading spinner */
 @keyframes spin {
   0% {
@@ -23,7 +25,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #3b82f6;
+  color: var(--color-primary);
   font-size: 18px;
 }
 
@@ -31,7 +33,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #10b981;
+  color: var(--color-success);
   font-size: 18px;
 }
 
@@ -39,12 +41,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #ef4444;
+  color: var(--color-error);
   font-size: 18px;
 }
 
 .status-neutral {
-  color: #94a3b8;
+  color: var(--color-slate-400);
   font-size: 18px;
 }
 
@@ -52,7 +54,7 @@
 .loading-spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid #3b82f6;
+  border: 2px solid var(--color-primary);
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -73,23 +75,23 @@
 
 /* Button variants */
 .button-loading {
-  background-color: #2f71b9;
+  background-color: var(--color-button);
   cursor: pointer;
 }
 
 .button-loading:disabled {
-  background-color: #64748b;
+  background-color: var(--color-slate-500);
   cursor: not-allowed;
 }
 
 .button-success {
-  background-color: #10b981;
+  background-color: var(--color-success);
 }
 
 .button-error {
-  background-color: #ef4444;
+  background-color: var(--color-error);
 }
 
 .button-neutral {
-  background-color: #64748b;
+  background-color: var(--color-slate-500);
 }

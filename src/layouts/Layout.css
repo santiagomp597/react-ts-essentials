@@ -1,3 +1,5 @@
+@import "../styles/Variables.css";
+
 .layout {
   position: relative;
   display: flex;
@@ -7,28 +9,28 @@
 }
 
 .layout-javascript {
-  background-color: #0d1117;
+  background-color: var(--bg-dark-primary);
   background-image: radial-gradient(
     ellipse 80% 80% at 50% -20%,
-    rgba(255, 223, 93, 0.2),
+    var(--gradient-yellow),
     rgba(255, 255, 255, 0)
   );
 }
 
 .layout-react {
-  background-color: #000000;
+  background-color: var(--color-black);
   background-image: radial-gradient(
     ellipse 80% 80% at 50% -20%,
-    rgba(0, 200, 255, 0.707),
-    rgb(7, 55, 65)
+    var(--gradient-blue),
+    var(--gradient-dark-blue)
   );
 }
 
 .layout-typescript {
-  background-color: #0f1419;
+  background-color: var(--bg-dark-tertiary);
   background-image: radial-gradient(
     ellipse 80% 80% at 50% -20%,
-    rgba(49, 120, 198, 0.2),
+    var(--bg-typescript),
     rgba(255, 255, 255, 0)
   );
 }

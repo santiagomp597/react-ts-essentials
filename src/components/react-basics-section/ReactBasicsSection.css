@@ -1,14 +1,16 @@
+@import "../../styles/Variables.css";
+
 .react-basics-section {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  color: #e2e8f0;
+  color: var(--color-slate-300);
 }
 
 .react-basics-container {
-  background: rgba(13, 17, 23, 0.6);
-  border: 1px solid rgba(97, 218, 251, 0.2);
+  background: var(--bg-code-dark);
+  border: 1px solid var(--border-react);
   border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(10px);
@@ -22,7 +24,7 @@
 .react-basics-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #61dafb, #21d4fd);
+  background: linear-gradient(135deg, var(--color-react), var(--color-info));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -31,7 +33,7 @@
 
 .react-basics-header p {
   font-size: 1.1rem;
-  color: #94a3b8;
+  color: var(--color-slate-400);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -46,10 +48,10 @@
 
 .tab-button {
   padding: 0.75rem 1.5rem;
-  background: rgba(51, 65, 85, 0.3);
-  border: 1px solid rgba(100, 116, 139, 0.3);
+  background: var(--border-slate-medium);
+  border: 1px solid var(--border-slate);
   border-radius: 8px;
-  color: #cbd5e1;
+  color: var(--color-slate-300);
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -58,26 +60,22 @@
 }
 
 .tab-button:hover {
-  background: rgba(51, 65, 85, 0.5);
-  border-color: rgba(97, 218, 251, 0.4);
-  color: #e2e8f0;
+  background: var(--color-slate-700);
+  border-color: var(--border-react-strong);
+  color: var(--color-slate-300);
   transform: translateY(-1px);
 }
 
 .tab-button.active {
-  background: linear-gradient(
-    135deg,
-    rgba(97, 218, 251, 0.2),
-    rgba(33, 212, 253, 0.1)
-  );
-  border-color: rgba(97, 218, 251, 0.6);
-  color: #61dafb;
-  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.2);
+  background: linear-gradient(135deg, var(--shadow-react), var(--bg-react));
+  border-color: var(--border-react-strongest);
+  color: var(--color-react);
+  box-shadow: 0 4px 12px var(--shadow-react);
 }
 
 .react-basics-content {
-  background: rgba(30, 41, 59, 0.3);
-  border: 1px solid rgba(51, 65, 85, 0.4);
+  background: var(--bg-content);
+  border: 1px solid var(--border-slate-medium);
   border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(5px);
@@ -138,14 +136,14 @@
 
 /* Tab content specific styles for react section */
 .react-basics-content .tab-content h3 {
-  color: #61dafb;
+  color: var(--color-react);
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .react-basics-content .tab-content p {
-  color: #94a3b8;
+  color: var(--color-slate-400);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
@@ -159,21 +157,21 @@
 }
 
 .react-basics-content .example-card {
-  background: rgba(15, 20, 25, 0.6);
-  border: 1px solid rgba(97, 218, 251, 0.1);
+  background: var(--bg-header);
+  border: 1px solid var(--border-react);
   border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .react-basics-content .example-card:hover {
-  border-color: rgba(97, 218, 251, 0.3);
+  border-color: var(--border-react);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.1);
+  box-shadow: 0 8px 25px var(--bg-react);
 }
 
 .react-basics-content .example-card h4 {
-  color: #61dafb;
+  color: var(--color-react);
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -197,11 +195,11 @@
 .react-basics-content .concepts {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(97, 218, 251, 0.2);
+  border-top: 1px solid var(--border-react);
 }
 
 .react-basics-content .concepts h4 {
-  color: #61dafb;
+  color: var(--color-react);
   font-size: 1.4rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -216,16 +214,16 @@
 }
 
 .react-basics-content .concepts li {
-  background: rgba(97, 218, 251, 0.1);
-  border: 1px solid rgba(97, 218, 251, 0.2);
+  background: var(--bg-react);
+  border: 1px solid var(--border-react);
   border-radius: 6px;
   padding: 1rem;
-  color: #e2e8f0;
+  color: var(--color-slate-300);
   font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
 .react-basics-content .concepts li:hover {
-  background: rgba(97, 218, 251, 0.15);
-  border-color: rgba(97, 218, 251, 0.4);
+  background: var(--bg-react-medium);
+  border-color: var(--border-react-strong);
 }

@@ -1,3 +1,5 @@
+@import "../../../styles/Variables.css";
+
 /* Footer Styles */
 .footer {
   opacity: 0.8;
@@ -47,7 +49,7 @@
 .footer-content {
   font-size: 0.875rem;
   margin: auto;
-  color: rgba(39, 39, 42, 0.9);
+  color: var(--bg-nav);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -56,7 +58,7 @@
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .footer-content {
-    color: rgba(244, 244, 245, 0.9);
+    color: var(--overlay-white-text);
   }
 }
 

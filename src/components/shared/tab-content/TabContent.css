@@ -1,3 +1,5 @@
+@import "../../../styles/Variables.css";
+
 /* Tab content container */
 .tab-content {
   animation: fadeIn 0.3s ease-in-out;
@@ -17,14 +19,14 @@
 .tab-content h3 {
   font-size: 2rem;
   font-weight: 600;
-  color: #3178c6;
+  color: var(--color-typescript);
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .tab-content > p {
   font-size: 1.1rem;
-  color: #94a3b8;
+  color: var(--color-slate-400);
   text-align: center;
   margin-bottom: 2rem;
   max-width: 800px;
@@ -42,16 +44,16 @@
 
 /* Example cards */
 .example-card {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(71, 85, 105, 0.3);
+  background: var(--bg-content);
+  border: 1px solid var(--border-default);
   border-radius: 10px;
   padding: 1.5rem;
   transition: all 0.2s ease;
 }
 
 .example-card:hover {
-  border-color: rgba(49, 120, 198, 0.4);
-  background: rgba(30, 41, 59, 0.6);
+  border-color: var(--border-typescript-strong);
+  background: var(--bg-content-hover);
 }
 
 .example-card.large {
@@ -61,12 +63,12 @@
 .example-card h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #3178c6;
+  color: var(--color-typescript);
   margin-bottom: 1rem;
 }
 
 .example-card p {
-  color: #94a3b8;
+  color: var(--color-slate-400);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
@@ -74,8 +76,8 @@
 
 /* OOP concepts section */
 .concepts {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(71, 85, 105, 0.3);
+  background: var(--bg-content);
+  border: 1px solid var(--border-default);
   border-radius: 10px;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -84,7 +86,7 @@
 .concepts h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #3178c6;
+  color: var(--color-typescript);
   margin-bottom: 1rem;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .concepts li {
-  color: #cbd5e1;
+  color: var(--color-slate-300);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 0.75rem;
@@ -105,14 +107,14 @@
 
 .concepts li::before {
   content: "→";
-  color: #3178c6;
+  color: var(--color-typescript);
   font-weight: bold;
   position: absolute;
   left: 0;
 }
 
 .concepts li strong {
-  color: #3178c6;
+  color: var(--color-typescript);
   font-weight: 600;
 }
 

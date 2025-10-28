@@ -1,3 +1,5 @@
+@import "../../../styles/Variables.css";
+
 /* Header Component Styles */
 
 /* Main header container */
@@ -25,7 +27,7 @@
   animation: nav-shadow 2s linear both;
   animation-timeline: scroll();
   animation-range: 0 250px;
-  background-color: rgba(15, 20, 25, 0.6);
+  background-color: var(--bg-header);
   backdrop-filter: blur(12px);
 }
 
@@ -41,14 +43,14 @@
   padding: 0 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #4b5563;
+  color: var(--color-gray-600);
   align-items: center;
   width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   .nav-container {
-    color: #e5e7eb;
+    color: var(--color-gray-200);
   }
 }
 
@@ -76,7 +78,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #61dafb;
+  color: var(--color-react);
 }
 
 .nav-link:hover::after,
@@ -111,23 +113,24 @@
 }
 
 .hamburger-button:hover {
-  background-color: #f3f4f6;
+  background-color: var(--color-gray-100);
 }
 
 @media (prefers-color-scheme: dark) {
   .hamburger-button:hover {
-    background-color: rgba(39, 39, 42, 0.9);
+    background-color: var(--bg-nav);
   }
 }
 
 .hamburger-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   .hamburger-button:focus {
-    box-shadow: 0 0 0 2px #3178c6, 0 0 0 4px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 0 2px var(--color-typescript),
+      0 0 0 4px rgba(16, 185, 129, 0.1);
   }
 }
 
@@ -143,7 +146,7 @@
 .hamburger-line {
   width: 1.25rem;
   height: 0.125rem;
-  background-color: #374151;
+  background-color: var(--color-gray-700);
   border-radius: 9999px;
   transition: all 0.3s ease-in-out;
 }
@@ -153,12 +156,12 @@
 }
 
 .hamburger-button:hover .hamburger-line {
-  background-color: #3b82f6;
+  background-color: var(--color-primary);
 }
 
 @media (prefers-color-scheme: dark) {
   .hamburger-line {
-    background-color: #e5e7eb;
+    background-color: var(--color-gray-200);
   }
 }
 
@@ -169,7 +172,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--overlay-dark);
   backdrop-filter: blur(4px);
   z-index: 40;
   transition: opacity 0.3s ease-in-out;

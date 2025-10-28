@@ -1,3 +1,5 @@
+@import "./Variables.css";
+
 .flex {
   display: flex;
   align-items: center;
@@ -6,8 +8,8 @@
   margin-left: auto;
 }
 .code-block {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(71, 85, 105, 0.3);
+  background: var(--bg-code-medium);
+  border: 1px solid var(--border-default);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -17,13 +19,13 @@
 }
 
 .code-block code {
-  color: #94a3b8;
+  color: var(--color-slate-400);
   font-size: 0.9rem;
   line-height: 1.5;
 }
 .button {
-  background-color: #2f71b9;
-  color: #cbd5e1;
+  background-color: var(--color-button);
+  color: var(--color-slate-300);
   border: none;
   border-radius: 6px;
   padding: 0.5rem 1rem;
@@ -36,7 +38,7 @@
 }
 .label {
   display: inline-block;
-  color: #cbd5e1;
+  color: var(--color-slate-300);
   font-size: 14px;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
@@ -45,14 +47,14 @@
 .input-field {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
-  background: rgba(15, 23, 42, 0.6);
-  color: #cbd5e1;
+  background: var(--bg-code);
+  color: var(--color-slate-300);
   font-size: 1rem;
   transition: border-color 0.3s ease;
   &:focus {
-    border-color: #3b82f6;
+    border-color: var(--color-primary);
     outline: none;
   }
 }

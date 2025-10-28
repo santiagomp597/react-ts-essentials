@@ -1,0 +1,84 @@
+/* ===== CSS CUSTOM PROPERTIES (VARIABLES) ===== */
+/* Centralized color system for react-ts-essentials */
+
+:root {
+  /* ===== BRAND COLORS ===== */
+  --color-react: #61dafb;
+  --color-typescript: #3178c6;
+  --color-primary: #3b82f6;
+  --color-button: #2f71b9;
+
+  /* ===== SEMANTIC COLORS ===== */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #ffdf5d;
+  --color-info: #21d4fd;
+
+  /* ===== NEUTRALS ===== */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Grays */
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+
+  /* Slates (UI Colors) */
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* ===== DARK BACKGROUNDS ===== */
+  --bg-dark-primary: #0d1117;
+  --bg-dark-secondary: #18181b;
+  --bg-dark-tertiary: #0f1419;
+
+  /* ===== OVERLAYS & TRANSPARENCIES ===== */
+  /* Base overlays */
+  --overlay-white-text: rgba(255, 255, 255, 0.87);
+
+  /* Code/Content backgrounds */
+  --bg-code-medium: rgba(15, 23, 42, 0.8);
+  --bg-content: rgba(30, 41, 59, 0.4);
+  --bg-content-hover: rgba(30, 41, 59, 0.6);
+  --bg-header: rgba(15, 20, 25, 0.6);
+  --bg-nav: rgba(39, 39, 42, 0.9);
+
+  /* Borders */
+  --border-default: rgba(71, 85, 105, 0.3);
+  --border-strong: rgba(71, 85, 105, 0.5);
+  --border-slate: rgba(100, 116, 139, 0.3);
+  --border-slate-medium: rgba(51, 65, 85, 0.4);
+
+  /* React theme */
+  --bg-react: rgba(97, 218, 251, 0.1);
+  --bg-react-medium: rgba(97, 218, 251, 0.15);
+  --border-react: rgba(97, 218, 251, 0.2);
+  --border-react-strong: rgba(97, 218, 251, 0.4);
+  --border-react-strongest: rgba(97, 218, 251, 0.6);
+  --shadow-react: rgba(97, 218, 251, 0.2);
+
+  /* TypeScript theme */
+  --bg-typescript: rgba(49, 120, 198, 0.2);
+  --border-typescript: rgba(49, 120, 198, 0.2);
+  --border-typescript-strong: rgba(49, 120, 198, 0.4);
+  --shadow-typescript: rgba(6, 53, 78, 0.2);
+
+  /* Gradients */
+  --gradient-yellow: rgba(255, 223, 93, 0.2);
+  --gradient-blue: rgba(0, 200, 255, 0.707);
+  --gradient-dark-blue: rgb(7, 55, 65);
+
+  /* Special colors */
+  --color-focus: #eff6ff;
+  --color-focus-dark: rgba(6, 53, 78, 0.2);
+  --color-code-success: #dcfce7;
+  --color-code-success-border: rgba(34, 197, 94, 0.3);
+  --color-code-success-bg: rgba(6, 78, 59, 0.2);
+}
