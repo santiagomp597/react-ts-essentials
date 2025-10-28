@@ -1,4 +1,5 @@
-import { useAppContext } from "../../../hooks/UseAppContext";
+import { useAppContext } from "../../../hooks/useAppContext";
+
 
 export const UseContextExample = () => {
   const { theme, setTheme } = useAppContext();

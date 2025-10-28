@@ -1,6 +1,6 @@
+import useLoaderStatus from '../../../hooks/useLoaderStatus';
 import '../../../styles/Shared.css';
 import './CustomHookExample.css';
-import useLoaderStatus from '../../../hooks/UseLoaderStatus';
 
 export const CustomHookExample = () => {
   const { status, setLoading, setNeutral, setSuccess, setError } = useLoaderStatus(1500);

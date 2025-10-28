@@ -152,93 +152,6 @@ function App() {
     ],
   },
   {
-    id: "context",
-    label: "Context",
-    title: "React Context",
-    description:
-      "Context provides a way to pass data through the component tree without having to pass props down manually at every level.",
-    examples: [
-      {
-        title: "Creating Context",
-        code: `import React, { createContext, useContext } from 'react';
-
-// Create context
-const ThemeContext = createContext();
-
-// Provider component
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
-  
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}`,
-        description:
-          "Create context using createContext() and provide values using the Provider component.",
-        sizeClass: "large",
-      },
-      {
-        title: "Consuming Context",
-        content: <UseContextExample />,
-        description:
-          "Use useContext hook to consume context values in functional components.",
-        sizeClass: "large",
-      },
-      {
-        title: "Custom Hook for Context",
-        code: `// Custom hook for theme context
-function useTheme() {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-}
-
-// Usage in component
-function Header() {
-  const { theme } = useTheme();
-  
-  return (
-    <header className={\`header header-\${theme}\`}>
-      <h1>My App</h1>
-    </header>
-  );
-}`,
-        description:
-          "Create custom hooks to encapsulate context logic and provide better error handling.",
-        sizeClass: "large",
-      },
-      {
-        title: "Multiple Contexts",
-        code: `function App() {
-  return (
-    <ThemeProvider>
-      <UserProvider>
-        <LanguageProvider>
-          <MainApp />
-        </LanguageProvider>
-      </UserProvider>
-    </ThemeProvider>
-  );
-}
-
-function MainApp() {
-  const { theme } = useTheme();
-  const { user } = useUser();
-  const { language } = useLanguage();
-  
-  return <div>App content</div>;
-}`,
-        description:
-          "You can use multiple context providers to manage different pieces of global state.",
-        sizeClass: "large",
-      },
-    ],
-  },
-  {
     id: "hooks",
     label: "Hooks",
     title: "React Hooks",
@@ -340,6 +253,93 @@ function Parent() {
 }`,
         description:
           "useCallback memoizes callback functions to prevent unnecessary re-renders of child components. Use it when passing callbacks to optimized child components.",
+        sizeClass: "large",
+      },
+    ],
+  },
+  {
+    id: "context",
+    label: "Context",
+    title: "React Context",
+    description:
+      "Context provides a way to pass data through the component tree without having to pass props down manually at every level.",
+    examples: [
+      {
+        title: "Creating Context",
+        code: `import React, { createContext, useContext } from 'react';
+
+// Create context
+const ThemeContext = createContext();
+
+// Provider component
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+  
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}`,
+        description:
+          "Create context using createContext() and provide values using the Provider component.",
+        sizeClass: "large",
+      },
+      {
+        title: "Consuming Context",
+        content: <UseContextExample />,
+        description:
+          "Use useContext hook to consume context values in functional components.",
+        sizeClass: "large",
+      },
+      {
+        title: "Custom Hook for Context",
+        code: `// Custom hook for theme context
+function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+}
+
+// Usage in component
+function Header() {
+  const { theme } = useTheme();
+  
+  return (
+    <header className={\`header header-\${theme}\`}>
+      <h1>My App</h1>
+    </header>
+  );
+}`,
+        description:
+          "Create custom hooks to encapsulate context logic and provide better error handling.",
+        sizeClass: "large",
+      },
+      {
+        title: "Multiple Contexts",
+        code: `function App() {
+  return (
+    <ThemeProvider>
+      <UserProvider>
+        <LanguageProvider>
+          <MainApp />
+        </LanguageProvider>
+      </UserProvider>
+    </ThemeProvider>
+  );
+}
+
+function MainApp() {
+  const { theme } = useTheme();
+  const { user } = useUser();
+  const { language } = useLanguage();
+  
+  return <div>App content</div>;
+}`,
+        description:
+          "You can use multiple context providers to manage different pieces of global state.",
         sizeClass: "large",
       },
     ],
