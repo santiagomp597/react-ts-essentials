@@ -16,6 +16,10 @@
   font-family: "Fira Code", "Consolas", "Monaco", monospace;
   overflow-x: auto;
   text-align: left;
+  &.light {
+    background: var(--bg-code-light);
+    color: var(--overlay-black-text);
+  }
 }
 
 .code-block code {

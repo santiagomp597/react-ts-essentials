@@ -3,6 +3,7 @@ import { ConditionalRenderingExample } from "./examples/ConditionalRenderingExam
 import { CustomHookExample } from "./examples/CustomHookExample";
 import { ListsAndKeysExample } from "./examples/ListsAndKeysExample";
 import { UseEffectExample } from "./examples/UseEffectExample";
+import { UseContextExample } from "./examples/UseContextExample";
 
 // Tab data for React Basics Section
 export const reactBasicsTabs: TabData[] = [
@@ -180,18 +181,7 @@ function ThemeProvider({ children }) {
       },
       {
         title: "Consuming Context",
-        code: `function Button() {
-  const { theme, setTheme } = useContext(ThemeContext);
-  
-  return (
-    <button 
-      className={\`btn btn-\${theme}\`}
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-    >
-      Toggle Theme ({theme})
-    </button>
-  );
-}`,
+        content: <UseContextExample />,
         description:
           "Use useContext hook to consume context values in functional components.",
         sizeClass: "large",

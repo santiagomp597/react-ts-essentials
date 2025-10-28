@@ -16,7 +16,17 @@ function ItemList() {
       ))}
     </ul>
   );
-}`
+}
+  
+// Render:
+${items.length === 0 ? '<ul></ul>' :
+      `<ul>
+  <li>🍇</li>
+  <li>🍈</li>
+  <li>🍉</li>
+  <li>🍊</li>
+</ul>`
+    }`;
 
   const getCodeWrapper = () => {
     return codeWrapper.replace('[]', JSON.stringify(items));
@@ -25,7 +35,7 @@ function ItemList() {
     if (items.length > 0) {
       setItems([]);
     } else {
-      setItems(['Apple', 'Banana', 'Cherry', 'Pineapple']);
+      setItems(['🍇', '🍈', '🍉', '🍊']);
     }
   }
   return (

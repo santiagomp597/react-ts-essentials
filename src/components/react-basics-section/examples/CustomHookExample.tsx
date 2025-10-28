@@ -1,9 +1,9 @@
 import '../../../styles/Shared.css';
 import './CustomHookExample.css';
-import useAccordionStatus from '../../../hooks/LoadingStatusHook';
+import useLoaderStatus from '../../../hooks/UseLoaderStatus';
 
 export const CustomHookExample = () => {
-  const { status, setLoading, setNeutral, setSuccess, setError } = useAccordionStatus(1500);
+  const { status, setLoading, setNeutral, setSuccess, setError } = useLoaderStatus(1500);
 
   const codeWrapper = `import { useState } from 'react';
 
@@ -14,7 +14,7 @@ enum STATUS_ENUM {
   FAIL = "fail",
 }
 
-const useAccordionStatus = () => {
+const useLoaderStatus = () => {
   const [status, setStatus] = useState<STATUS_ENUM>(STATUS_ENUM.NEUTRAL);
   
   const setLoading = () => setStatus(STATUS_ENUM.LOADING);
@@ -31,7 +31,7 @@ const useAccordionStatus = () => {
 };
 
 // Usage in component:
-const { status, setLoading, setSuccess, setError } = useAccordionStatus();`;
+const { status, setLoading, setSuccess, setError } = useLoaderStatus();`;
 
   const renderStatusIcon = () => {
     switch (status) {

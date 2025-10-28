@@ -42,9 +42,12 @@
   /* ===== OVERLAYS & TRANSPARENCIES ===== */
   /* Base overlays */
   --overlay-white-text: rgba(255, 255, 255, 0.87);
+  --overlay-black-text: rgba(0, 0, 0, 0.87);
 
   /* Code/Content backgrounds */
   --bg-code-medium: rgba(15, 23, 42, 0.8);
+  --bg-code-dark: rgba(15, 23, 42, 0.6);
+  --bg-code-light: rgba(255, 255, 255, 0.9);
   --bg-content: rgba(30, 41, 59, 0.4);
   --bg-content-hover: rgba(30, 41, 59, 0.6);
   --bg-header: rgba(15, 20, 25, 0.6);
